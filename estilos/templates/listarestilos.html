@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estilos</title>
+</head>
+<body>
+    <h1>Lista de Estilos</h1>
+    <a href="{% url 'cadastrar_estilos' %}">Cadastrar Novo Estilo</a>
+    <ul>
+         {% for estilo in estilos %}
+        <li>
+            {{ estilo.nome }}
+            <a href="{% url 'editar_estilos' estilo.id %}">Editar</a>
+            <a href="{% url 'excluir_estilos' estilo.id %}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

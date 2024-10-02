@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tem Certeza?</title>
+</head>
+<body>
+    <h1>Confirmar Exclusão</h1>
+    <p>Tem certeza que deseja excluir o estilo musical {{ estilo.nome  }}?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Excluir</button>
+        <a href="{% url 'listar_musicas' %}"></a>
+    </form>
+</body>
+</html>
